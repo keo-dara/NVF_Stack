@@ -15,3 +15,13 @@
 - Better Auth
 - Postgrest 
 - Redis
+
+# How to migrate 
+
+```
+cd ./backend/src
+```
+
+```
+npx @better-auth/cli@latest migrate
+```

@@ -22,4 +22,16 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('Hello World!');
   });
+
+  it('/sign up with email test', () => {
+    return request(app.getHttpServer())
+      .post('/api/auth/sign-up/email')
+      .send({
+        name: "John Doe", // required
+        email: "john.doe@example.com", // required
+        password: "password1234", // required
+        image: "https://example.com/image.png",
+      })
+      .expect(200)
+  })
 });
