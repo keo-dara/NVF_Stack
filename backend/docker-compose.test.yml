@@ -1,0 +1,10 @@
+services:
+  dev-db:
+    image: postgres
+    shm_size: 128mb
+    ports:
+      - 5437:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: test_db
