@@ -18,11 +18,15 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/sign up with email test', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .post('/api/auth/sign-up/email')
+      .send({
+        name: "John Doe",
+        email: `${Date.now()}@example.com`, 
+        password: "password1234",
+        image: "https://example.com/image.png",
+      })
       .expect(200)
-      .expect('Hello World!');
-  });
-
+  })
 });

@@ -1,9 +1,10 @@
 import { betterAuth } from "better-auth";
 import { Pool } from "pg";
+import { databaseConnectString } from "./config";
 
 export const auth = betterAuth({
     database: new Pool({
-        connectionString: 'postgresql://postgres:123@localhost:5437/test_db',
+        connectionString: databaseConnectString,
     }),
     emailAndPassword: {
         enabled: true,
